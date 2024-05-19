@@ -1,0 +1,5 @@
+Flask
+boto3
+mpi4py
+opencv-python
+numpy

@@ -1,0 +1,15 @@
+<!doctype html>
+<html>
+<head>
+    <title>Files</title>
+</head>
+<body>
+    <h1>Files in S3 Bucket</h1>
+    <ul>
+        {% for file in files %}
+            <li><a href="{{ url_for('download_file', filename=file) }}">{{ file }}</a></li>
+        {% endfor %}
+    </ul>
+    <a href="/">Back to Upload</a>
+</body>
+</html>

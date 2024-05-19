@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+    <title>Upload File</title>
+</head>
+<body>
+    <h1>Upload File</h1>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" multiple>
+        <label for="operation">Choose an operation:</label>
+        <select name="operation" id="operation">
+            <option value="edge_detection">Edge Detection</option>
+            <option value="color_manipulation">Color Manipulation</option>
+            <option value="histogram_equalization">Histogram Equalization</option>
+            <option value="noise_reduction">Noise Reduction</option>
+            <option value="morphological_transform">Morphological Transform</option>
+        </select>
+        <input type="submit" value="Upload">
+    </form>
+    <br>
+    <h1>Worker Status</h1>
+    <ul>
+        {% for worker, status_list in worker_status.items() %}
+            <li>{{ worker }}: {{ status_list[-1] }}</li>
+        {% endfor %}
+    </ul>
+    <br>
+    <a href="/files">View and Download Files</a>
+</body>
+</html>
